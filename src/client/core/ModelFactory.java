@@ -1,8 +1,14 @@
 package client.core;
 
+import client.network.Client;
+
 public class ModelFactory {
 
     private ChatModel chatModel;
+
+    public ModelFactory()
+    {
+    }
 
     public ChatModel getChatModel()
     {
