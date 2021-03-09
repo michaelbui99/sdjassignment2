@@ -6,8 +6,9 @@ public class ModelFactory {
 
     private ChatModel chatModel;
 
-    public ModelFactory()
+    public ModelFactory(Client client)
     {
+
     }
 
     public ChatModel getChatModel()

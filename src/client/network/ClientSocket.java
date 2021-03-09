@@ -11,13 +11,16 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.List;
 
-public class ClientSocket extends Handler implements Client
+public class ClientSocket implements Client
 {
   private PropertyChangeSupport support;
+  private String userName;
 
   public ClientSocket()
   {
+
     support = new PropertyChangeSupport(this);
+
   }
 
   public void startClient(){
@@ -61,18 +64,18 @@ public class ClientSocket extends Handler implements Client
   {
      try
      {
-       Request response = request("sendMessage",new Message(msg, "lili"));
+       Request response = request("sendMessage",new Message(msg, userName));
      }catch (IOException | ClassNotFoundException e){
        e.printStackTrace();
      }
   }
 
-  @Override public List<String> getConnectedUsers()
+  @Override public List<ClientSocket> getConnectedUsers()
   {
     try
     {
       Request response = request("getConnectedUsers", null);
-      return (List<String>) response.getObj();
+      return (List<ClientSocket>) response.getObj();
     } catch (IOException | ClassNotFoundException e){
       e.printStackTrace();
     }
@@ -89,6 +92,16 @@ public class ClientSocket extends Handler implements Client
       e.printStackTrace();
     }
     return null;
+  }
+
+  @Override public String getUserName()
+  {
+    return userName;
+  }
+
+  @Override public void setUserName(String name)
+  {
+    userName= name;
   }
 
   @Override public void addPropertyChangeListener(String name,

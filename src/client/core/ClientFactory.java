@@ -7,10 +7,7 @@ public class ClientFactory {
 
     private Client client;
 
-    public ClientFactory()
-    {
-       this.getClient();
-    }
+
 
     public Client getClient()
     {
