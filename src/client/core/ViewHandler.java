@@ -1,6 +1,7 @@
 package client.core;
 
 import client.view.chatroom.ChatRoomController;
+import client.view.clinetswindow.ClientsController;
 import client.view.usernamewindow.UserNameController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -30,24 +31,24 @@ public class ViewHandler extends Application {
         {
             loader.setLocation(getClass().getResource("../view/chatroom/" + id +"View.fxml"));
             root = loader.load();
-            ChatRoomController viewController = loader.getController();
-            viewController.init(this, vmf);
+            ChatRoomController chatRoomController = loader.getController();
+            chatRoomController.init(this, vmf);
             stage.setTitle("Chatroom");
         }
         else if (id.equals("Username"))
         {
             loader.setLocation(getClass().getResource("../view/usernamewindow/" + id +"View.fxml"));
             root = loader.load();
-            UserNameController viewController = loader.getController();
-            viewController.init(this, vmf);
+            UserNameController userNameController = loader.getController();
+            userNameController.init(this, vmf);
             stage.setTitle("Username View");
         }
         else if (id.equals("Clients"))
         {
             loader.setLocation(getClass().getResource("../view/clientswindow/" + id +"View.fxml"));
             root = loader.load();
-            UserNameController viewController = loader.getController();
-            viewController.init(this, vmf);
+            ClientsController clientsController = loader.getController();
+            clientsController.init(this, vmf);
             stage.setTitle("List of users");
         }
         scene = new Scene(root);

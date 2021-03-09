@@ -1,23 +1,34 @@
 package client.core;
 
+import client.view.chatroom.ChatRoomVM;
+import client.view.clinetswindow.ClientsVM;
+import client.view.usernamewindow.UserNameVM;
+
 public class ViewModelFactory {
 
-    private ChatRoomViewVM chatRoomViewVM;
-    private UserNameViewVM userNameViewVM;
+    private ChatRoomVM chatRoomViewVM;
+    private UserNameVM userNameViewVM;
+    private ClientsVM clientsVM;
 
     public ViewModelFactory(ModelFactory mf)
     {
-        chatRoomViewVM = new ChatRoomVM();
-        userNameViewVM = new UsernameView();
+        userNameViewVM = new UserNameVM(mf.getChatModel());
+        chatRoomViewVM = new ChatRoomVM(mf.getChatModel());
+        clientsVM = new ClientsVM(mf.getChatModel());
     }
 
-    public UserNameViewVM getUserNameViewVM()
+    public UserNameVM getUserNameViewVM()
     {
         return userNameViewVM;
     }
 
-    public ChatRoomViewVM getChatRoomViewVM()
+    public ChatRoomVM getChatRoomViewVM()
     {
         return chatRoomViewVM;
+    }
+
+    public ClientsVM getClientsVM()
+    {
+        return clientsVM;
     }
 }
