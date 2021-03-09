@@ -1,5 +1,6 @@
 package server.network;
 
+import server.model.ConnectionPool;
 import shared.Request;
 
 import java.io.IOException;
@@ -12,8 +13,9 @@ public class ServerSocketHandler implements Runnable
   private Socket socket;
   private ObjectInputStream in;
   private ObjectOutputStream out;
+  private ConnectionPool pool;
 
-  public ServerSocketHandler(Socket socket) throws IOException
+  public ServerSocketHandler(Socket socket, ConnectionPool pool) throws IOException
   {
     this.socket = socket;
     in = new ObjectInputStream(socket.getInputStream());
