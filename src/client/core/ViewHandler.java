@@ -1,5 +1,7 @@
 package client.core;
 
+import client.view.chatroom.ChatRoomController;
+import client.view.usernamewindow.UserNameController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
