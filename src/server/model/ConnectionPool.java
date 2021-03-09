@@ -1,6 +1,5 @@
 package server.model;
 
-import server.network.ServerSocket;
 import server.network.ServerSocketHandler;
 
 import java.util.ArrayList;
@@ -25,12 +24,12 @@ public class ConnectionPool
     connections.remove(handler);
   }
 
-  /*public void broadcastMessage(String message)
+  public void broadcastMessage(String message)
   {
     System.out.println("Broadcasting: " + message + " to " + connections.size() + " clients");
     for (ServerSocketHandler handler : connections)
     {
       handler.sendMessage(message);
     }
-  }*/
+  }
 }
