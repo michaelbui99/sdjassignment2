@@ -104,6 +104,11 @@ public class ClientSocket implements Client
     userName= name;
   }
 
+  @Override public int getNumberOfConnectedUsers()
+  {
+    return 0;
+  }
+
   @Override public void addPropertyChangeListener(String name,
       PropertyChangeListener listener)
   {
