@@ -1,5 +1,7 @@
 package client.core;
 
+import client.model.ChatModel;
+import client.model.ChatModelManager;
 import client.network.Client;
 
 public class ModelFactory {
@@ -16,7 +18,7 @@ public class ModelFactory {
     {
         if (chatModel == null)
         {
-            chatModel = new ChatModel(clientFactory.getClient());
+            chatModel = new ChatModelManager(clientFactory.getClient());
         }
         return chatModel;
     }

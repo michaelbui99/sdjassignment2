@@ -70,12 +70,12 @@ public class ClientSocket implements Client
      }
   }
 
-  @Override public List<ClientSocket> getConnectedUsers()
+  @Override public List<String> getConnectedUsers()
   {
     try
     {
       Request response = request("getConnectedUsers", null);
-      return (List<ClientSocket>) response.getObj();
+      return (List<String>) response.getObj();
     } catch (IOException | ClassNotFoundException e){
       e.printStackTrace();
     }

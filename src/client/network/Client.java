@@ -8,9 +8,10 @@ import java.util.List;
 public interface Client extends PropertyChangeSubject
 {
    void  sendMessage(String msg);
-   List <ClientSocket> getConnectedUsers();
+   List <String> getConnectedUsers();
    List <Message> getMessages();
    String getUserName();
    void setUserName(String name);
+   int getNumberOfConnectedUsers();
 
 }
