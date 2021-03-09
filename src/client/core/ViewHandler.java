@@ -28,7 +28,7 @@ public class ViewHandler extends Application {
         Parent root= null;
         if (id.equals("ChatRoom"))
         {
-            loader.setLocation(getClass().getResource("../view/ChatRoomView/" + id +"View.fxml"));
+            loader.setLocation(getClass().getResource("../view/chatroom/" + id +"View.fxml"));
             root = loader.load();
             ChatRoomController viewController = loader.getController();
             viewController.init(this, vmf);
@@ -36,11 +36,19 @@ public class ViewHandler extends Application {
         }
         else if (id.equals("Username"))
         {
-            loader.setLocation(getClass().getResource("../view/UsernameView/" + id +"View.fxml"));
+            loader.setLocation(getClass().getResource("../view/usernamewindow/" + id +"View.fxml"));
             root = loader.load();
             UserNameController viewController = loader.getController();
             viewController.init(this, vmf);
             stage.setTitle("Username View");
+        }
+        else if (id.equals("Clients"))
+        {
+            loader.setLocation(getClass().getResource("../view/clientswindow/" + id +"View.fxml"));
+            root = loader.load();
+            UserNameController viewController = loader.getController();
+            viewController.init(this, vmf);
+            stage.setTitle("List of users");
         }
         scene = new Scene(root);
         stage.setScene(scene);
