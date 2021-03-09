@@ -5,6 +5,7 @@ import client.network.Client;
 public class ModelFactory {
 
     private ChatModel chatModel;
+    private ClientFactory clientFactory = new ClientFactory();
 
     public ModelFactory(Client client)
     {
@@ -15,7 +16,7 @@ public class ModelFactory {
     {
         if (chatModel == null)
         {
-            chatModel = new ChatModel();
+            chatModel = new ChatModel(clientFactory.getClient());
         }
         return chatModel;
     }
