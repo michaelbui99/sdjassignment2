@@ -7,8 +7,8 @@ public class ViewModelFactory {
 
     public ViewModelFactory(ModelFactory mf)
     {
-        chatRoomViewVM = new MainViewVM();
-        userNameViewVM = new ControlViewVM();
+        chatRoomViewVM = new ChatRoomVM();
+        userNameViewVM = new UsernameView();
     }
 
     public UserNameViewVM getUserNameViewVM()

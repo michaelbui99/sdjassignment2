@@ -1,11 +1,13 @@
 package server.network;
 
+import server.model.ConnectionPool;
+
 import java.io.IOException;
 import java.net.Socket;
 
 public class ServerSocket
 {
-
+  private ConnectionPool pool = new ConnectionPool();
 
   public void start() throws IOException
   {
@@ -15,7 +17,7 @@ public class ServerSocket
       while (true)
       {
         Socket socket = serverSocket.accept();
-        ServerSocketHandler handler = new ServerSocketHandler(socket);
+        ServerSocketHandler handler = new ServerSocketHandler(socket, pool);
         Thread handlerThread = new Thread(handler);
         handlerThread.start();
       }
