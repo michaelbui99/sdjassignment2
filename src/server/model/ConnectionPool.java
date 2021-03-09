@@ -24,12 +24,17 @@ public class ConnectionPool
     connections.remove(handler);
   }
 
-  public void broadcastMessage(String message)
+  public int getNumberOfConnections()
   {
-    System.out.println("Broadcasting: " + message + " to " + connections.size() + " clients");
-    for (ServerSocketHandler handler : connections)
-    {
-      handler.sendMessage(message);
-    }
+    return connections.size();
   }
+
+//  public void broadcastMessage(String message)
+//  {
+//    System.out.println("Broadcasting: " + message + " to " + connections.size() + " clients");
+//    for (ServerSocketHandler handler : connections)
+//    {
+//      handler.sendMessage(message);
+//    }
+//  }
 }

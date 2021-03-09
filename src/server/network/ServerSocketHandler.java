@@ -1,5 +1,6 @@
 package server.network;
 
+import server.model.ChatModel;
 import server.model.ConnectionPool;
 import shared.Request;
 
@@ -13,10 +14,12 @@ public class ServerSocketHandler implements Runnable
   private Socket socket;
   private ObjectInputStream in;
   private ObjectOutputStream out;
-  private ConnectionPool pool;
+//  private ConnectionPool pool;
+  private ChatModel model;
 
-  public ServerSocketHandler(Socket socket, ConnectionPool pool) throws IOException
+  public ServerSocketHandler(Socket socket, ChatModel model) throws IOException
   {
+    this.model = model;
     this.socket = socket;
     in = new ObjectInputStream(socket.getInputStream());
     out = new ObjectOutputStream(socket.getOutputStream());

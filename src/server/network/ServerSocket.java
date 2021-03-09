@@ -1,5 +1,6 @@
 package server.network;
 
+import server.model.ChatModel;
 import server.model.ConnectionPool;
 
 import java.io.IOException;
@@ -7,7 +8,12 @@ import java.net.Socket;
 
 public class ServerSocket
 {
-  private ConnectionPool pool = new ConnectionPool();
+  private ChatModel model;
+
+  public ServerSocket(ChatModel model)
+  {
+    this.model = model;
+  }
 
   public void start() throws IOException
   {
@@ -17,7 +23,8 @@ public class ServerSocket
       while (true)
       {
         Socket socket = serverSocket.accept();
-        ServerSocketHandler handler = new ServerSocketHandler(socket, pool);
+        ServerSocketHandler handler = new ServerSocketHandler(socket, model);
+        model.addHandler(handler);
         Thread handlerThread = new Thread(handler);
         handlerThread.start();
       }
