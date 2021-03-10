@@ -2,6 +2,7 @@ package server.network;
 
 import server.model.ChatModel;
 import server.model.ConnectionPool;
+import shared.Message;
 import shared.Request;
 
 import java.beans.PropertyChangeEvent;
@@ -35,6 +36,15 @@ public class ServerSocketHandler implements Runnable
       {
         Request requestFromClient = (Request) in.readObject();
         System.out.println("Request from client received: " + requestFromClient.getType());
+
+        if (requestFromClient.getType().equals("Listener"))
+        {
+          model.addPropertyChangeListener("SendMessage", this::onSendMessage);
+        }
+        else if (requestFromClient.getType().equals("SendMessage"))
+        {
+          model.sendMessage((Message) requestFromClient.getObj());
+        }
       }
       catch (IOException | ClassNotFoundException e)
       {
@@ -42,5 +52,17 @@ public class ServerSocketHandler implements Runnable
       }
     }
 
+  }
+
+  public void onSendMessage(PropertyChangeEvent evt)
+  {
+    try
+    {
+      out.writeObject(new Request(evt.getPropertyName(), evt.getNewValue()));
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
   }
 }

@@ -13,11 +13,13 @@ public class ChatRoomController
   @FXML public TextField messageField;
   private ViewHandler viewHandler;
   private ViewModelFactory viewModelFactory;
+  private ChatRoomVM viewModel;
 
   public void init(ViewHandler viewHandler, ViewModelFactory vmf)
   {
     this.viewHandler = viewHandler;
-    this.viewModelFactory = viewModelFactory;
+    this.viewModelFactory = vmf;
+    viewModel = viewModelFactory.getChatRoomViewVM();
   }
 
   @FXML public void onButtonClose(ActionEvent actionEvent)
@@ -30,6 +32,8 @@ public class ChatRoomController
 
   @FXML public void onButtonSend(ActionEvent actionEvent)
   {
+    viewModel.sendMessage(messageField.getText());
+    messageField.clear();
   }
 
   @FXML public void onButtonConnections(ActionEvent actionEvent)

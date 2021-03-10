@@ -64,7 +64,7 @@ public class ClientSocket implements Client
   {
      try
      {
-       Request response = request("sendMessage",new Message(msg, userName));
+       Request response = request("SendMessage",new Message(msg, userName));
      }catch (IOException | ClassNotFoundException e){
        e.printStackTrace();
      }

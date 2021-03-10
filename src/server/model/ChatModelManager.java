@@ -22,9 +22,10 @@ public class ChatModelManager implements ChatModel
     pool = new ConnectionPool();
   }
 
-  @Override public void sendMessage(String msg)
+  @Override public void sendMessage(Message msg)
   {
-
+    support.firePropertyChange("SendMessage" , null, msg);
+    messageList.addMessage(msg);
   }
 
   @Override public List<String> getConnectedUsers()

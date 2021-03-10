@@ -11,4 +11,9 @@ public class ChatRoomVM
     this.model = model;
 
   }
+
+  public void sendMessage(String msg)
+  {
+    model.sendMessage(msg);
+  }
 }
