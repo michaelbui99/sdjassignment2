@@ -4,6 +4,7 @@ import server.model.ChatModel;
 import server.model.ConnectionPool;
 import shared.Request;
 
+import java.beans.PropertyChangeEvent;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -33,6 +34,7 @@ public class ServerSocketHandler implements Runnable
       try
       {
         Request requestFromClient = (Request) in.readObject();
+        System.out.println("Request from client received: " + requestFromClient.getType());
       }
       catch (IOException | ClassNotFoundException e)
       {
