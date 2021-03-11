@@ -83,18 +83,6 @@ public class ClientSocket implements Client
     return null;
   }
 
-  @Override public List<Message> getMessages()
-  {
-    try
-    {
-      Request response = request("getMessages", null);
-      return (List<Message>) response.getObj();
-    } catch (IOException | ClassNotFoundException e){
-      e.printStackTrace();
-    }
-    return null;
-  }
-
   @Override public String getUserName()
   {
     return userName;
@@ -107,11 +95,6 @@ public class ClientSocket implements Client
     this.oldName = oldName;
     String s = oldName +","+name;
     Request response = request("addUser",s);
-  }
-
-  @Override public int getNumberOfConnectedUsers()
-  {
-    return 0;
   }
 
   @Override public void addPropertyChangeListener(String name,
