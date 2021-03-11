@@ -35,7 +35,7 @@ public class ViewHandler extends Application {
             chatRoomController.init(this, vmf);
             stage.setTitle("Chatroom");
         }
-        else if (id.equals("Username"))
+        else if (id.equals("UserName"))
         {
             loader.setLocation(getClass().getResource("../view/usernamewindow/" + id +"View.fxml"));
             root = loader.load();
@@ -45,7 +45,7 @@ public class ViewHandler extends Application {
         }
         else if (id.equals("Clients"))
         {
-            loader.setLocation(getClass().getResource("../view/clientswindow/" + id +"View.fxml"));
+            loader.setLocation(getClass().getResource("../view/clinetswindow/" + id +"View.fxml"));
             root = loader.load();
             ClientsController clientsController = loader.getController();
             clientsController.init(this, vmf);
@@ -58,6 +58,6 @@ public class ViewHandler extends Application {
 
     @Override public void start(Stage stage) throws Exception
     {
-        openView("Username");
+        openView("UserName");
     }
 }

@@ -28,9 +28,14 @@ public class ChatModelManager implements ChatModel
     messageList.addMessage(msg);
   }
 
+  @Override public void addConnectedUser(String user)
+  {
+    pool.addUser(user);
+  }
+
   @Override public List<String> getConnectedUsers()
   {
-    return null;
+    return pool.getUsers();
   }
 
   @Override public List<Message> getMessages()

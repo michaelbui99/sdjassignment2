@@ -2,6 +2,7 @@ package client.view.usernamewindow;
 
 import client.model.ChatModel;
 
+import java.io.IOException;
 
 public class UserNameVM
 {
@@ -14,7 +15,7 @@ public class UserNameVM
 
   }
 
-  public void addUser(String name)
+  public void addUser(String name) throws IOException, ClassNotFoundException
   {
     model.setUserName(name);
   }

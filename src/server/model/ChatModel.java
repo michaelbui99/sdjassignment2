@@ -9,6 +9,7 @@ import java.util.List;
 public interface ChatModel extends PropertyChangeSubject
 {
   void  sendMessage(Message msg);
+  void addConnectedUser(String user);
   List<String> getConnectedUsers();
   List <Message> getMessages();
   int getNumberOfConnectedUsers();

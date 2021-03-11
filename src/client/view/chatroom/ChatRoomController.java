@@ -5,7 +5,6 @@ import client.core.ViewModelFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
@@ -27,12 +26,13 @@ public class ChatRoomController
 
   @FXML public void onButtonClose(ActionEvent actionEvent)
   {
+    System.exit(0);
   }
 
   @FXML public void onButtonOpenClient(ActionEvent actionEvent)
       throws IOException
   {
-    viewHandler.openView("Username");
+    viewHandler.openView("UserName");
   }
 
   @FXML public void onButtonSend(ActionEvent actionEvent)
@@ -42,7 +42,9 @@ public class ChatRoomController
   }
 
   @FXML public void onButtonConnections(ActionEvent actionEvent)
+      throws IOException
   {
+    viewHandler.openView("Clients");
   }
 
 

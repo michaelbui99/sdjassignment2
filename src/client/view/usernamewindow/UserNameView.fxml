@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.view.usernamewindow.UserNameController">
    <children>
       <HBox alignment="CENTER" prefHeight="73.0" prefWidth="600.0">
@@ -33,6 +32,7 @@
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label text="User Name" GridPane.rowIndex="1">
@@ -50,6 +50,11 @@
                         <Insets left="20.0" right="100.0" />
                      </GridPane.margin>
                   </TextField>
+                  <Label fx:id="addUserLabel" text="User has been added" textFill="#388648" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="100.0" />
+                     </GridPane.margin>
+                  </Label>
                </children>
             </GridPane>
          </children>
@@ -65,7 +70,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#onButtonBack" text="Back">
+                  <Button mnemonicParsing="false" onAction="#onButtonBack" text="Chat Room">
                      <GridPane.margin>
                         <Insets left="10.0" />
                      </GridPane.margin>

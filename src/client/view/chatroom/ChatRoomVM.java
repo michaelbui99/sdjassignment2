@@ -4,13 +4,7 @@ import client.model.ChatModel;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
-import shared.Message;
 import shared.PropertyChangeSubject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ChatRoomVM
 {

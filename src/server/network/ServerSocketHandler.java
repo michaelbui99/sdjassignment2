@@ -46,6 +46,15 @@ public class ServerSocketHandler implements Runnable
           model.sendMessage((Message) requestFromClient.getObj());
           out.writeObject(new Request("response", "Message has been sent"));
         }
+        else if (requestFromClient.getType().equals("addUser"))
+        {
+          model.addConnectedUser((String) requestFromClient.getObj());
+          out.writeObject(new Request("response", "I got it"));
+        }
+        else if (requestFromClient.getType().equals("getConnectedUsers"))
+        {
+          out.writeObject(new Request("getConnectedUsers", model.getConnectedUsers()));
+        }
       }
       catch (IOException | ClassNotFoundException e)
       {

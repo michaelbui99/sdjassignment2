@@ -6,6 +6,7 @@ import shared.Message;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.IOException;
 import java.util.List;
 
 public class ChatModelManager implements ChatModel
@@ -42,6 +43,7 @@ public class ChatModelManager implements ChatModel
   }
 
   @Override public void setUserName(String name)
+      throws IOException, ClassNotFoundException
   {
     client.setUserName(name);
   }

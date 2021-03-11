@@ -8,10 +8,12 @@ import java.util.List;
 public class ConnectionPool
 {
   private List<ServerSocketHandler> connections;
+  private List<String> users;
 
   public ConnectionPool()
   {
     connections = new ArrayList<>();
+    users = new ArrayList<>();
   }
 
   public void addHandler(ServerSocketHandler handler)
@@ -27,6 +29,16 @@ public class ConnectionPool
   public int getNumberOfConnections()
   {
     return connections.size();
+  }
+
+  public List<String> getUsers()
+  {
+    return users;
+  }
+
+  public void addUser(String user)
+  {
+    users.add(user);
   }
 
 //  public void broadcastMessage(String message)

@@ -100,8 +100,10 @@ public class ClientSocket implements Client
   }
 
   @Override public void setUserName(String name)
+      throws IOException, ClassNotFoundException
   {
-    userName= name;
+    userName = name;
+    Request response = request("addUser", name);
   }
 
   @Override public int getNumberOfConnectedUsers()

@@ -3,6 +3,7 @@ package client.network;
 import shared.Message;
 import shared.PropertyChangeSubject;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface Client extends PropertyChangeSubject
@@ -12,7 +13,7 @@ public interface Client extends PropertyChangeSubject
    List <String> getConnectedUsers();
    List <Message> getMessages();
    String getUserName();
-   void setUserName(String name);
+   void setUserName(String name) throws IOException, ClassNotFoundException;
    int getNumberOfConnectedUsers();
 
 }
