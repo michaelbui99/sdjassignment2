@@ -29,4 +29,9 @@ public class Message
   {
     return time;
   }
+
+  @Override public String toString()
+  {
+    return time+" ["+userName+"]: "+ message + " ";
+  }
 }

@@ -20,6 +20,7 @@ public class ChatRoomController
     this.viewHandler = viewHandler;
     this.viewModelFactory = vmf;
     viewModel = viewModelFactory.getChatRoomViewVM();
+    chatWindow.textProperty().bind(viewModel.messagesProperty());
   }
 
   @FXML public void onButtonClose(ActionEvent actionEvent)
