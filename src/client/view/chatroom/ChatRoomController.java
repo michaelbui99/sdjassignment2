@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 public class ChatRoomController
 {
   @FXML public TextArea chatWindow;
-  @FXML public TextField messageField;
+  @FXML public TextArea messageAria;
   private ViewHandler viewHandler;
   private ViewModelFactory viewModelFactory;
   private ChatRoomVM viewModel;
@@ -32,8 +32,8 @@ public class ChatRoomController
 
   @FXML public void onButtonSend(ActionEvent actionEvent)
   {
-    viewModel.sendMessage(messageField.getText());
-    messageField.clear();
+    viewModel.sendMessage(messageAria.getText());
+    messageAria.clear();
   }
 
   @FXML public void onButtonConnections(ActionEvent actionEvent)

@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -25,13 +24,13 @@
             </Label>
          </children>
       </HBox>
-      <HBox prefHeight="308.0" prefWidth="598.0">
+      <HBox prefHeight="321.0" prefWidth="603.0">
          <children>
             <ScrollPane prefHeight="326.0" prefWidth="599.0">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="301.0" prefWidth="596.0">
                      <children>
-                        <TextArea fx:id="chatWindow" prefHeight="308.0" prefWidth="598.0" />
+                        <TextArea fx:id="chatWindow" layoutX="-1.0" prefHeight="302.0" prefWidth="599.0" />
                      </children>
                   </AnchorPane>
               </content>
@@ -40,14 +39,15 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="290.0" prefWidth="603.0">
          <children>
-            <GridPane prefHeight="293.0" prefWidth="607.0">
+            <GridPane prefHeight="277.0" prefWidth="603.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="149.0" />
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="454.0" minWidth="10.0" prefWidth="454.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="219.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="454.0" minWidth="10.0" prefWidth="322.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="454.0" minWidth="10.0" prefWidth="115.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="147.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="134.0" minHeight="10.0" prefHeight="131.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label text="Write your message">
@@ -55,14 +55,9 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="messageField" GridPane.columnIndex="1">
+                  <Button mnemonicParsing="false" onAction="#onButtonSend" text="Send" GridPane.columnIndex="2">
                      <GridPane.margin>
-                        <Insets right="100.0" />
-                     </GridPane.margin>
-                  </TextField>
-                  <Button mnemonicParsing="false" onAction="#onButtonSend" text="Send" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="300.0" />
+                        <Insets left="44.0" />
                      </GridPane.margin>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#onButtonConnections" text="See connections" GridPane.rowIndex="1">
@@ -70,6 +65,15 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Button>
+                  <ScrollPane prefHeight="175.0" prefWidth="304.0" GridPane.columnIndex="1">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="139.0" prefWidth="285.0">
+                           <children>
+                              <TextArea fx:id="messageAria" prefHeight="146.0" prefWidth="304.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
                </children>
             </GridPane>
          </children>
