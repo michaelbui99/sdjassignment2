@@ -16,21 +16,6 @@ public class Message implements Serializable
     time =new Date();
   }
 
-  public String getMessage()
-  {
-    return message;
-  }
-
-  public String getUserName()
-  {
-    return userName;
-  }
-
-  public Date getTime()
-  {
-    return time;
-  }
-
   @Override public String toString()
   {
     return time+" ["+userName+"]: "+ message + " ";

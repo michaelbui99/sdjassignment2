@@ -17,15 +17,4 @@ public class MessageList
   {
     messages.add(msg);
   }
-
-  public ArrayList<Message> getAllMessages()
-  {
-    return messages;
-  }
-
-  public int getNumberOfMessages()
-  {
-    return messages.size();
-  }
-
 }

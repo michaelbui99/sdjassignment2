@@ -24,7 +24,7 @@ public class ClientSocket implements Client
 
   }
 
-  public void startClient(){
+  @Override public void startClient(){
     try
     {
       Socket socket = new Socket("localhost",1234);

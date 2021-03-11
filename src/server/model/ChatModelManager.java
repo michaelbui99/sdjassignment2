@@ -1,13 +1,11 @@
 package server.model;
 
-import client.network.Client;
 import server.MessageList;
 import server.network.ServerSocketHandler;
 import shared.Message;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.util.Arrays;
 import java.util.List;
 
 public class ChatModelManager implements ChatModel
@@ -41,15 +39,6 @@ public class ChatModelManager implements ChatModel
     return pool.getUsers();
   }
 
-  @Override public List<Message> getMessages()
-  {
-    return messageList.getAllMessages();
-  }
-
-  @Override public int getNumberOfConnectedUsers()
-  {
-    return pool.getNumberOfConnections();
-  }
 
   @Override public void addHandler(ServerSocketHandler handler)
   {

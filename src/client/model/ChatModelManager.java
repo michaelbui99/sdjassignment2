@@ -32,11 +32,6 @@ public class ChatModelManager implements ChatModel
     return client.getConnectedUsers();
   }
 
-  @Override public List<Message> getMessages()
-  {
-    return client.getMessages();
-  }
-
   @Override public String getUserName()
   {
     return client.getUserName();
@@ -46,11 +41,6 @@ public class ChatModelManager implements ChatModel
       throws IOException, ClassNotFoundException
   {
     client.setUserName(name, oldName);
-  }
-
-  @Override public int getNumberOfConnectedUsers()
-  {
-    return client.getNumberOfConnectedUsers();
   }
 
   @Override public void addPropertyChangeListener(String name,

@@ -1,7 +1,6 @@
 package server.network;
 
 import server.model.ChatModel;
-import server.model.ConnectionPool;
 import shared.Message;
 import shared.Request;
 
@@ -16,7 +15,6 @@ public class ServerSocketHandler implements Runnable
   private Socket socket;
   private ObjectInputStream in;
   private ObjectOutputStream out;
-//  private ConnectionPool pool;
   private ChatModel model;
 
 

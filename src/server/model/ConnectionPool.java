@@ -26,11 +26,6 @@ public class ConnectionPool
     connections.remove(handler);
   }
 
-  public int getNumberOfConnections()
-  {
-    return connections.size();
-  }
-
   public List<String> getUsers()
   {
     return users;
@@ -46,12 +41,4 @@ public class ConnectionPool
     users.remove(user);
   }
 
-//  public void broadcastMessage(String message)
-//  {
-//    System.out.println("Broadcasting: " + message + " to " + connections.size() + " clients");
-//    for (ServerSocketHandler handler : connections)
-//    {
-//      handler.sendMessage(message);
-//    }
-//  }
 }
