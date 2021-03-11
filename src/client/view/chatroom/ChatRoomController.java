@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class ChatRoomController
 {
   @FXML public TextArea chatWindow;
@@ -28,7 +30,9 @@ public class ChatRoomController
   }
 
   @FXML public void onButtonOpenClient(ActionEvent actionEvent)
+      throws IOException
   {
+    viewHandler.openView("Username");
   }
 
   @FXML public void onButtonSend(ActionEvent actionEvent)

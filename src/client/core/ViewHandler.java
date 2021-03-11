@@ -58,6 +58,6 @@ public class ViewHandler extends Application {
 
     @Override public void start(Stage stage) throws Exception
     {
-        openView("ChatRoom");
+        openView("Username");
     }
 }

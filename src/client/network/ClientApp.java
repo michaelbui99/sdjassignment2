@@ -16,6 +16,6 @@ public class ClientApp extends Application
     ModelFactory mf = new ModelFactory(cf.getClient());
     ViewModelFactory viewModelFactory = new ViewModelFactory(mf);
     ViewHandler viewHandler = new ViewHandler(stage, viewModelFactory);
-    viewHandler.start();
+    viewHandler.start(stage);
   }
 }

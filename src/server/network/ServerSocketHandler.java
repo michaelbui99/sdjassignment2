@@ -44,6 +44,7 @@ public class ServerSocketHandler implements Runnable
         else if (requestFromClient.getType().equals("SendMessage"))
         {
           model.sendMessage((Message) requestFromClient.getObj());
+          out.writeObject(new Request("response", "Message has been sent"));
         }
       }
       catch (IOException | ClassNotFoundException e)

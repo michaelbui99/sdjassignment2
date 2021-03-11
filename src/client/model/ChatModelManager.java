@@ -17,6 +17,7 @@ public class ChatModelManager implements ChatModel
   {
     this.client = client;
     support = new PropertyChangeSupport(this);
+    client.startClient();
     client.addPropertyChangeListener("SendMessage", (evt)->support.firePropertyChange(evt));
   }
 
