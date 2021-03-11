@@ -12,7 +12,7 @@ public interface ChatModel extends PropertyChangeSubject
   List<String> getConnectedUsers();
   List <Message> getMessages();
   String getUserName();
-  void setUserName(String name) throws IOException, ClassNotFoundException;
+  void setUserName(String name, String oldName) throws IOException, ClassNotFoundException;
   int getNumberOfConnectedUsers();
 
 }

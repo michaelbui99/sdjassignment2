@@ -19,6 +19,8 @@ public class ServerSocketHandler implements Runnable
 //  private ConnectionPool pool;
   private ChatModel model;
 
+
+
   public ServerSocketHandler(Socket socket, ChatModel model) throws IOException
   {
     this.model = model;

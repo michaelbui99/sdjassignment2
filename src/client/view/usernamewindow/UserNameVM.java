@@ -15,9 +15,13 @@ public class UserNameVM
 
   }
 
-  public void addUser(String name) throws IOException, ClassNotFoundException
+  public void addUser(String name, String oldName) throws IOException, ClassNotFoundException
   {
-    model.setUserName(name);
+    model.setUserName(name, oldName);
   }
 
+  public String getUsername()
+  {
+    return model.getUserName();
+  }
 }

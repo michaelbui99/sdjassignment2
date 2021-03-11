@@ -15,6 +15,7 @@ public class ClientSocket implements Client
 {
   private PropertyChangeSupport support;
   private String userName;
+  private String oldName;
 
   public ClientSocket()
   {
@@ -99,11 +100,13 @@ public class ClientSocket implements Client
     return userName;
   }
 
-  @Override public void setUserName(String name)
+  @Override public void setUserName(String name, String oldName)
       throws IOException, ClassNotFoundException
   {
     userName = name;
-    Request response = request("addUser", name);
+    this.oldName = oldName;
+    String s = oldName +","+name;
+    Request response = request("addUser",s);
   }
 
   @Override public int getNumberOfConnectedUsers()

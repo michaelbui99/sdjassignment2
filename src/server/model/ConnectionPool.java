@@ -41,6 +41,11 @@ public class ConnectionPool
     users.add(user);
   }
 
+  public void removeUser(String user)
+  {
+    users.remove(user);
+  }
+
 //  public void broadcastMessage(String message)
 //  {
 //    System.out.println("Broadcasting: " + message + " to " + connections.size() + " clients");

@@ -7,6 +7,7 @@ import shared.Message;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.Arrays;
 import java.util.List;
 
 public class ChatModelManager implements ChatModel
@@ -30,7 +31,9 @@ public class ChatModelManager implements ChatModel
 
   @Override public void addConnectedUser(String user)
   {
-    pool.addUser(user);
+    String[] names = user.split(",");
+    pool.removeUser(names[0]);
+    pool.addUser(names[1]);
   }
 
   @Override public List<String> getConnectedUsers()

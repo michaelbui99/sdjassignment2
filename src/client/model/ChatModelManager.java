@@ -42,10 +42,10 @@ public class ChatModelManager implements ChatModel
     return client.getUserName();
   }
 
-  @Override public void setUserName(String name)
+  @Override public void setUserName(String name, String oldName)
       throws IOException, ClassNotFoundException
   {
-    client.setUserName(name);
+    client.setUserName(name, oldName);
   }
 
   @Override public int getNumberOfConnectedUsers()

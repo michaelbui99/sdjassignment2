@@ -32,7 +32,8 @@ public class UserNameController
   @FXML public void onButtonSave(ActionEvent actionEvent)
       throws IOException, ClassNotFoundException
   {
-  userNameVM.addUser(userName.getText());
+   String oldName = userNameVM.getUsername();
+  userNameVM.addUser(userName.getText(), oldName);
   addUserLabel.setVisible(true);
    userName.clear();
   }
